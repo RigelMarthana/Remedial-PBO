@@ -25,5 +25,18 @@ class Crud_model extends CI_Model {
         return $query->row();
     }
 
-    function
+    function updateData($Id){
+        $data = array (
+            'Nama' => $this->input->post('Nama'),
+            'Tngl_Lhr' => $this->input->post('Tngl_Lhr'),
+            'NoHP' => $this->input->post('NoHP'),
+        );
+        $this->db->where('Id', $Id);
+        $this->db->update('tbl_name', $data);
+    }
+
+    function deleteData($Id) {
+        $this->db->where('id', $Id);
+        $this->db->delete('tbl_name');
+    }
 }

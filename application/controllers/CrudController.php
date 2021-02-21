@@ -26,4 +26,9 @@ class CrudController extends CI_Controller {
         $this->Crud_model->updateData($Id);
         redirect('CrudController');
     }
+
+    public function delete($Id) {
+        $this->Crud_model->deleteData($Id);
+        redirect("CrudController");
+    }
 }
